@@ -1,57 +1,72 @@
 # Production-Grade LLM & Agentic AI System
 
-A production-oriented LLM and agentic AI system demonstrating retrieval-augmented generation (RAG), tool-using agents, and multi-agent orchestration with real-world constraints.
+A production-grade LLM and agentic AI system designed to demonstrate retrieval-augmented generation (RAG), tool-using agents, and multi-agent orchestration under real-world constraints.
+
+---
+
+## TL;DR
+
+This project focuses on **system design**, not demos.
+
+It demonstrates how to build **reliable, scalable, and observable** LLM-powered applications that account for latency, cost, failure handling, and deterministic behavior—challenges commonly encountered in production environments.
 
 ---
 
 ## Why This Project Exists
 
-Most LLM applications fail when exposed to real-world requirements such as reliability, latency, cost control, and failure handling.  
-This project focuses on building an end-to-end agentic AI system designed with **production constraints** in mind rather than demo-only experimentation.
+Many LLM applications perform well in isolation but fail when exposed to real-world requirements such as:
+
+- Unpredictable latency
+- Token and cost constraints
+- Hallucinations and weak grounding
+- Limited observability and debuggability
+- Fragile agent workflows
+
+This project addresses those gaps by designing an **end-to-end agentic AI system** with production considerations as first-class concerns.
 
 ---
 
 ## System Overview
 
-The system is designed as an **API-first AI service** that supports:
+The system is implemented as an **API-first AI service** supporting:
 
 - Retrieval-augmented generation (RAG) with structured chunking and evaluation
 - Tool-using agents with explicit orchestration and control flow
 - Multi-agent collaboration patterns for complex task execution
-- Clear separation between orchestration, retrieval, and generation layers
+- Clear separation of orchestration, retrieval, and generation layers
 
 ---
 
 ## Architecture
 
-The core architecture is composed of the following components:
+Core components include:
 
 - **API Layer**  
-  FastAPI-based service boundary exposing AI capabilities as stable, versioned endpoints.
+  FastAPI-based service boundary exposing stable, versioned AI endpoints.
 
 - **Agent Orchestration Layer**  
-  Explicit orchestration logic controlling agent execution, tool usage, and task sequencing.
+  Explicit orchestration logic controlling agent execution, tool usage, retries, and task sequencing.
 
 - **Retrieval Layer**  
   Vector-based retrieval with deterministic chunking strategies and grounding mechanisms.
 
 - **Memory & Context Management**  
-  Short-term and task-scoped memory handling to support agent reasoning across steps.
+  Short-term and task-scoped memory supporting agent reasoning across multiple steps.
 
 - **Safety & Reliability Controls**  
-  Guardrails, retries, validation checks, and clearly defined failure paths.
+  Guardrails, validation checks, failure paths, and graceful degradation strategies.
 
 ---
 
 ## Production Considerations
 
-This project explicitly addresses production concerns including:
+This system explicitly addresses:
 
 - Latency and token cost trade-offs
 - Hallucination mitigation via retrieval grounding
 - Deterministic behavior in agent workflows
 - Observability and debuggability of agent execution
-- Graceful degradation and failure handling
+- Failure handling and graceful degradation
 
 ---
 
@@ -67,4 +82,3 @@ This project explicitly addresses production concerns including:
 ## Status
 
 This repository represents an actively evolving system focused on architectural clarity, robustness, and production readiness.
-
