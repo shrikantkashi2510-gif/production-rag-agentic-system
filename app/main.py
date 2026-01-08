@@ -24,3 +24,4 @@ def create_app() -> FastAPI:
 
 app = create_app()
 
+# Demo workflow entry point lives in app.orchestration.workflows
