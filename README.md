@@ -82,3 +82,18 @@ This system explicitly addresses:
 ## Status
 
 This repository represents an actively evolving system focused on architectural clarity, robustness, and production readiness.
+
+## System Walkthrough (High-Level)
+
+This repository demonstrates a production-oriented agentic AI system built with explicit control flow and safety boundaries.
+
+A minimal demo workflow illustrates the execution path:
+
+1. A workflow receives structured input specifying a tool to invoke
+2. Input is validated through safety guardrails
+3. An agent manager orchestrates execution
+4. A tool-using agent invokes a registered tool deterministically
+5. Structured output is returned for inspection
+
+This approach avoids implicit reasoning chains and prioritizes debuggability, reliability, and system transparency—qualities required for real-world deployment.
+
