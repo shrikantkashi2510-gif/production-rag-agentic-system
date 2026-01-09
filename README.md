@@ -1,5 +1,12 @@
 # Production-Grade LLM & Agentic AI System
 
+> This project demonstrates how production-grade RAG and agentic systems behave under real-world constraints.
+> 
+> All prompts, retrieval outputs, and agent behaviors are evaluated and regression-tested using the
+> **LLM Evaluation & Reliability Platform**:
+> https://github.com/shrikantkashi2510-gif/llm-eval-reliability-platform
+
+
 A production-grade LLM and agentic AI system designed to demonstrate retrieval-augmented generation (RAG), tool-using agents, and multi-agent orchestration under real-world constraints.
 
 ---
@@ -14,15 +21,14 @@ It demonstrates how to build **reliable, scalable, and observable** LLM-powered 
 
 ## Why This Project Exists
 
-Many LLM applications perform well in isolation but fail when exposed to real-world requirements such as:
+Most RAG and agentic demos work well in isolation but fail in production due to:
+- Retrieval drift as data changes
+- Tool misuse or unsafe tool chaining
+- Compounding errors across multiple agents
+- Lack of evaluation beyond happy paths
 
-- Unpredictable latency
-- Token and cost constraints
-- Hallucinations and weak grounding
-- Limited observability and debuggability
-- Fragile agent workflows
+This project focuses on **how RAG and agentic systems behave when those issues are unavoidable**.
 
-This project addresses those gaps by designing an **end-to-end agentic AI system** with production considerations as first-class concerns.
 
 ---
 
@@ -34,6 +40,21 @@ The system is implemented as an **API-first AI service** supporting:
 - Tool-using agents with explicit orchestration and control flow
 - Multi-agent collaboration patterns for complex task execution
 - Clear separation of orchestration, retrieval, and generation layers
+
+
+  ## Scope (What This Project Focuses On)
+
+This project intentionally focuses on:
+- Retrieval-augmented generation with realistic failure modes
+- Tool-using agents with supervision boundaries
+- Multi-agent orchestration for non-trivial workflows
+- Integration with an external evaluation and reliability layer
+
+Out of scope by design:
+- UI-heavy dashboards
+- Fine-tuning or model training
+- Benchmark chasing or synthetic demos
+
 
 ---
 
@@ -76,6 +97,29 @@ This system explicitly addresses:
 - Practical experience designing agentic AI systems beyond demos
 - Understanding of real-world deployment constraints
 - Readiness for production and team-based engineering environments
+
+
+  ## Evaluation & Reliability
+
+This system is not evaluated manually or via ad-hoc testing.
+
+Instead:
+- Key prompts and workflows are captured as golden datasets
+- Responses are evaluated for faithfulness, relevance, and drift
+- Regressions are detected across prompt, data, or model changes
+
+Evaluation logic lives in a separate, reusable platform to avoid coupling:
+https://github.com/shrikantkashi2510-gif/llm-eval-reliability-platform
+
+
+## How This Would Evolve in Production
+
+If extended beyond a reference implementation, I would:
+- Add release gates based on evaluation thresholds
+- Introduce cost-aware retrieval and agent execution limits
+- Store long-term evaluation history for drift analysis
+- Add human-in-the-loop checkpoints for high-risk actions
+
 
 ---
 
