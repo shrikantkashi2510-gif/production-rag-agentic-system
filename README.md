@@ -1,13 +1,24 @@
 # Production-Grade LLM & Agentic AI System
 
-> This project demonstrates how production-grade RAG and agentic systems behave under real-world constraints.
-> 
-> All prompts, retrieval outputs, and agent behaviors are evaluated and regression-tested using the
-> **LLM Evaluation & Reliability Platform**:
-> https://github.com/shrikantkashi2510-gif/llm-eval-reliability-platform
+> Production-grade RAG and agentic AI system designed for real-world constraints, tool use, and orchestration.
 
+This project demonstrates how retrieval-augmented generation and agentic workflows can be designed for production, with explicit attention to orchestration, tool reliability, and operational boundaries.
 
-A production-grade LLM and agentic AI system designed to demonstrate retrieval-augmented generation (RAG), tool-using agents, and multi-agent orchestration under real-world constraints.
+## Who This Is For
+
+This project is designed for:
+- Teams building RAG or agent-based LLM systems
+- Engineers moving from prototype to production
+- Organizations requiring controlled tool use and orchestration
+
+## When to Use This
+
+Use this system when:
+- RAG pipelines must operate under real-world constraints
+- Agents need controlled access to tools and data
+- Reliability and predictability matter more than autonomy
+
+> This repository reflects production patterns for deploying RAG and agentic systems safely.
 
 ---
 
